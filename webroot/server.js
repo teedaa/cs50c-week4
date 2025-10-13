@@ -1,3 +1,5 @@
+"use strict"
+
 const questions = [
     "What month are we in?",
     "What is the name of the main character in Dragon Ball Z?",
