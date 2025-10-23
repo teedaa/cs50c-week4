@@ -7,25 +7,17 @@ const questions = [
     { question: "Is mayonnaise an instrument?", choices: ["No Patrick mayonnaise is not an instrument.", "Yes"], correct: "No Patrick mayonnaise is not an instrument" }
 ]
 
-const choices = questions[turn].choices;
 
 let turn = 0;
 let score = 0;
 
-// document.getElementById("submit").addEventListener("click", checkAnswer);
 
-// function checkAnswer(){
-
-// }
-
-function showAnswer(){
+function showQuestion(){
+    const choices = questions[turn].choices;
     document.getElementById("question").innerHTML = "";
     
     document.getElementById("question").innerText = questions[turn].question;
 
-    for ( let i = 0; i < choices.length; i++ ){
-        const choices = questions[turn].choices;
-    }
 
     document.getElementById("choices").innerHTML = "";
 
@@ -45,5 +37,20 @@ function showAnswer(){
         container.appendChild(document.createElement("br"));
         
     }
-
 }
+
+function checkAnswer() {
+const selected = document.querySelector("input[name='question':checked");
+
+if (!selected) {
+    document.getElementById("message").innerText = "Choose an answer";
+
+    return;
+
+} 
+    
+}
+
+document.getElementById("submit").addEventListener("click", checkAnswer);
+
+showQuestion();
