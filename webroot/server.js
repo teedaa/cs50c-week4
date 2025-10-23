@@ -48,9 +48,26 @@ if (!selected) {
     return;
 
 } 
-    
+  const userAnswer = selected.questions
+  const correctAnswer= questions[turn].correct;
+
+if (userAnswer === correctAnswer) {
+    score = score + 1;
+    document.getElementById("message").innerText = "Correct!";
+} else {
+    document.getElementById("message").innerText = "Wrong!";
+}
+
+turn = turn + 1;
+
+if (turn < questions.length) {
+    document.getElementById("question").innerHTML ="";
+    document.getElementById("choices").innerHTML= ""; 
+}
+
 }
 
 document.getElementById("submit").addEventListener("click", checkAnswer);
 
 showQuestion();
+checkAnswer();
